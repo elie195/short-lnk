@@ -17,6 +17,9 @@
     "shortid": "^2.2.6",
     "simpl-schema": "0.0.3"
   },
+  "engines": {
+    "node": "4.6.2"
+  },
   "devDependencies": {
     "eslint": "^4.7.0",
     "eslint-config-google": "^0.9.1",
