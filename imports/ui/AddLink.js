@@ -6,7 +6,7 @@ export default class AddLink extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            url: '',
+            url: 'https://',
             isOpen: false,
             error: ''
         };
@@ -30,9 +30,12 @@ export default class AddLink extends React.Component {
     handleModalClose() {
         this.setState({
             isOpen: false, 
-            url: '',
+            url: 'https://',
             error: ''
         });
+    }
+    handleFocus(event) {
+        event.target.select();
     }
     render() {
         return (
@@ -53,7 +56,8 @@ export default class AddLink extends React.Component {
                             placeholder="URL"
                             ref="url"
                             value={this.state.url}
-                            onChange={this.onChange.bind(this)} />
+                            onChange={this.onChange.bind(this)}
+                            onFocus={this.handleFocus} />
                         <button className="button">Add Link</button>
                         <button type="button" onClick={this.handleModalClose.bind(this)} className="button button--secondary">Cancel</button>
                     </form>
